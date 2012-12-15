@@ -1,0 +1,24 @@
+{
+    "name": "ellicom/markdown",
+    "description": "Markdown compiler for Laravel 4 (Illuminate)",
+    "keywords": ["laravel", "md", "markdown", "illuminate"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vincent Talbot",
+            "email": "vincent.talbot@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/foundation": ">=1.0.0",
+        "dflydev/markdown": "dev-master"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.7.2"
+    },
+    "autoload": {
+        "psr-0": {"Ellicom\\Markdown": "src/"}
+    },
+    "minimum-stability": "dev"
+}
