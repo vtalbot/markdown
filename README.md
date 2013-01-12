@@ -1,8 +1,12 @@
 # Markdown Compiler for Laravel 4 (Illuminate)
 
-[![Build Status](https://travis-ci.org/Ellicom/markdown.png)](https://travis-ci.org/Ellicom/markdown)
-
 ### Installation
+
+Add to your composer.json those lines
+
+    "require": {
+        "ellicom/markdown": "1.*"
+    }
 
 Run `php artisan config:publish ellicom/markdown`
 
@@ -19,7 +23,3 @@ If `test.md` doesn't exists in the `public` directory, it will search for `test.
 If found, compile it if needed and return the result.
 
     Markdown::make('file-in-markdown-directory');
-
-### Todo
-
-Add tests.
