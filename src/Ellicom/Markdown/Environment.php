@@ -3,8 +3,8 @@
 namespace Ellicom\Markdown;
 
 use Closure;
-use Illuminate\Container;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Container\Container;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\ViewFinderInterface;
 
