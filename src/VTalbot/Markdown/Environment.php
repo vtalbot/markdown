@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Markdown;
+namespace VTalbot\Markdown;
 
 use Closure;
 use Illuminate\Events\Dispatcher;
@@ -80,7 +80,7 @@ class Environment {
      * Get a evaluated Markdown contents for the given Markdown.
      *
      * @param  string  $markdown
-     * @return Ellicom\Markdown\Markdown
+     * @return VTalbot\Markdown\Markdown
      */
     public function make($markdown)
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Ellicom\Markdown;
+namespace VTalbot\Markdown;
 
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\FileViewFinder;
-use Ellicom\Markdown\Compilers\MarkdownCompiler;
+use VTalbot\Markdown\Compilers\MarkdownCompiler;
 
 class MarkdownServiceProvider extends ServiceProvider {
 
@@ -18,7 +18,7 @@ class MarkdownServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['config']->package('ellicom/markdown', 'ellicom/markdown', 'ellicom/markdown');
+        $this->app['config']->package('vtalbot/markdown', 'vtalbot/markdown', 'vtalbot/markdown');
 
         $this->registerRoutes();
 
@@ -38,9 +38,9 @@ class MarkdownServiceProvider extends ServiceProvider {
     {
         $app = $this->app;
 
-        foreach ($app['config']['ellicom/markdown::routes'] as $routes)
+        foreach ($app['config']['vtalbot/markdown::routes'] as $routes)
         {
-            foreach ($app['config']['ellicom/markdown::extensions'] as $ext)
+            foreach ($app['config']['vtalbot/markdown::extensions'] as $ext)
             {
                 \Route::get($routes.'{file}.'.$ext, function($file) use ($routes)
                 {
@@ -107,7 +107,7 @@ class MarkdownServiceProvider extends ServiceProvider {
     {
         $this->app['markdown.finder'] = $this->app->share(function($app)
         {
-            $paths = $app['config']['ellicom/markdown::paths'];
+            $paths = $app['config']['vtalbot/markdown::paths'];
 
             foreach ($paths as $key => $path)
             {

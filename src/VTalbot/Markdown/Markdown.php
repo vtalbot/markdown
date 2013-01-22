@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Markdown;
+namespace Vtalbot\Markdown;
 
 use Illuminate\View\Engines\EngineInterface;
 use Illuminate\Support\Contracts\RenderableInterface as Renderable;
@@ -10,7 +10,7 @@ class Markdown implements Renderable {
     /**
      * The Markdown environment instance.
      *
-     * @var Ellicom\Markdown\Environment
+     * @var Vtalbot\Markdown\Environment
      */
     protected $environment;
 
@@ -38,7 +38,7 @@ class Markdown implements Renderable {
     /**
      * Create a new Markdown instance.
      *
-     * @param  Ellicom\Markdown\Environment  $environment
+     * @param  Vtalbot\Markdown\Environment  $environment
      * @param  Illuminate\View\Engines\EngineInterface  $engine
      * @param  string  $markdown
      * @param  string  $path
@@ -83,7 +83,7 @@ class Markdown implements Renderable {
     /**
      * Get the Markdown environment instance.
      *
-     * @return Ellicom\Markdown\Environment
+     * @return Vtalbot\Markdown\Environment
      */
     public function getEnvironment()
     {

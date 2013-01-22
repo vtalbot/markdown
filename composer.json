@@ -1,5 +1,5 @@
 {
-    "name": "ellicom/markdown",
+    "name": "vtalbot/markdown",
     "description": "Markdown compiler for Laravel 4 (Illuminate)",
     "keywords": ["laravel", "md", "markdown", "illuminate"],
     "license": "MIT",
@@ -18,7 +18,7 @@
         "mockery/mockery": "0.7.2"
     },
     "autoload": {
-        "psr-0": {"Ellicom\\Markdown": "src/"}
+        "psr-0": {"VTalbot\\Markdown": "src/"}
     },
     "extra": {
         "branch-alias": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Markdown\Compilers;
+namespace VTalbot\Markdown\Compilers;
 
 use Illuminate\Filesystem;
 use Illuminate\View\Compilers\Compiler;
