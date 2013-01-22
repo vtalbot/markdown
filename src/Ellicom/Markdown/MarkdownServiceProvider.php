@@ -46,7 +46,7 @@ class MarkdownServiceProvider extends ServiceProvider {
                 {
                     $markdown = \Markdown::make($routes.$file);
                     return \Response::make($markdown, 200, array('Content-Type' => 'text/html'));
-                });
+                })->where('file', '.*');
             }
         }
     }
