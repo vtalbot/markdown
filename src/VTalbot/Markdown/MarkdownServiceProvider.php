@@ -30,7 +30,7 @@ class MarkdownServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Register routes to catch LESS request.
+     * Register routes to catch Markdown request.
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class MarkdownServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Register the LESS engine implementation.
+     * Register the Markdown engine implementation.
      *
      * @param  Illuminate\View\Engines\EngineResolver  $resolver
      * @return void
@@ -99,7 +99,7 @@ class MarkdownServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Register the LESS finder implementation.
+     * Register the Markdown finder implementation.
      *
      * @return void
      */
@@ -119,7 +119,7 @@ class MarkdownServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Register the LESS environment.
+     * Register the Markdown environment.
      *
      * @return void
      */

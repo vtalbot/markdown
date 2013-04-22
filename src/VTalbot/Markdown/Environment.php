@@ -90,6 +90,19 @@ class Environment {
     }
 
     /**
+     * Get a evaluated Markdown contents for the given string.
+     *
+     * @param  string  $markdown
+     * @return string
+     */
+    public function string($markdown)
+    {
+        $resolver = app('markdown.engine.resolver');
+        $compiler = $resolver->resolve('markdown')->getCompiler();
+        return $compiler->string($markdown);
+    }
+
+    /**
      * Get the appropriate Markdown engine for the given path.
      *
      * @param  string  $path

@@ -25,4 +25,19 @@ class MarkdownCompiler extends Compiler implements CompilerInterface {
             $this->files->put($this->getCompiledPath($path), $contents);
         }
     }
+
+    /**
+     * Compile the Markdown from the given string
+     * and returns it
+     *
+     * @param  string  $str
+     * @return string
+     */
+    public function string($str)
+    {
+        $markdown = new MarkdownParser();
+        $contents = $markdown->transformMarkdown($str);
+
+        return $contents;
+    }
 }
