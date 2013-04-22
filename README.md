@@ -23,3 +23,7 @@ If `test.md` doesn't exists in the `public` directory, it will search for `test.
 If found, compile it if needed and return the result.
 
     Markdown::make('file-in-markdown-directory');
+
+Or, you can compile a simple string:
+
+    Markdown::string('#test');
