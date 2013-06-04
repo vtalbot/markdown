@@ -18,7 +18,7 @@ class MarkdownServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['config']->package('vtalbot/markdown', 'vtalbot/markdown', 'vtalbot/markdown');
+        $this->app['config']->package('vtalbot/markdown', __DIR__.'/../../../config');
 
         $this->registerRoutes();
 
