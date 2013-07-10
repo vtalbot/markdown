@@ -10,14 +10,14 @@ class Markdown implements Renderable {
     /**
      * The Markdown environment instance.
      *
-     * @var Vtalbot\Markdown\Environment
+     * @var Environment
      */
     protected $environment;
 
     /**
      * The engine implementation.
      *
-     * @var Illuminate\View\Engines\EngineInterface
+     * @var EngineInterface
      */
     protected $engine;
 
@@ -38,11 +38,12 @@ class Markdown implements Renderable {
     /**
      * Create a new Markdown instance.
      *
-     * @param  Vtalbot\Markdown\Environment  $environment
-     * @param  Illuminate\View\Engines\EngineInterface  $engine
-     * @param  string  $markdown
-     * @param  string  $path
-     * @return void
+     * @param Environment     $environment
+     * @param EngineInterface $engine
+     * @param string          $markdown
+     * @param string          $path
+     *
+     * @return Markdown
      */
     public function __construct(Environment $environment, EngineInterface $engine, $markdown, $path)
     {
@@ -60,11 +61,8 @@ class Markdown implements Renderable {
     public function render()
     {
         $env = $this->environment;
-
         $env->incrementRender();
-
         $contents = $this->getContents();
-
         $env->decrementRender();
 
         return $contents;
@@ -83,7 +81,7 @@ class Markdown implements Renderable {
     /**
      * Get the Markdown environment instance.
      *
-     * @return Vtalbot\Markdown\Environment
+     * @return Environment
      */
     public function getEnvironment()
     {
@@ -93,7 +91,7 @@ class Markdown implements Renderable {
     /**
      * Get the Markdown' rendering engine.
      *
-     * @return Illuminate\View\Engines\EngineInterface
+     * @return EngineInterface
      */
     public function getEngine()
     {

@@ -5,7 +5,9 @@ namespace VTalbot\Markdown;
 use Closure;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Container\Container;
+use Illuminate\View\Engines\EngineInterface;
 use Illuminate\View\Engines\EngineResolver;
+use Illuminate\View\FileViewFinder;
 use Illuminate\View\ViewFinderInterface;
 
 class Environment {
@@ -13,28 +15,28 @@ class Environment {
     /**
      * The engine implementation.
      *
-     * @var Illuminate\View\Engines\EngineResolver
+     * @var EngineResolver
      */
     protected $engines;
 
     /**
      * The Markdown finder implementation.
-     * 
-     * @var Illuminate\View\ViewFinderInterface
+     *
+     * @var ViewFinderInterface
      */
     protected $finder;
 
     /**
      * The event dispatcher instance.
      *
-     * @var Illuminate\Events\Dispatcher
+     * @var Dispatcher
      */
     protected $events;
 
     /**
      * The IoC container instance.
      *
-     * @var Illuminate\Container
+     * @var Container
      */
     protected $container;
 
@@ -62,17 +64,17 @@ class Environment {
     /**
      * Create a new Markdown environment instance.
      *
-     * @param  Illuminate\View\Engines\EngineResolver  $engines
-     * @param  Illuminate\View\ViewFinderInterface  $finder
-     * @param  Illuminate\Events\Dispatcher  $events
-     * @return void
+     * @param EngineResolver      $engines
+     * @param ViewFinderInterface $finder
+     * @param Dispatcher          $events
+     *
+     * @return Environment
      */
     public function __construct(EngineResolver $engines, ViewFinderInterface $finder, Dispatcher $events)
     {
         $this->engines = $engines;
         $this->finder = $finder;
         $this->events = $events;
-
         $this->share('__env', $this);
     }
 
@@ -80,7 +82,7 @@ class Environment {
      * Get a evaluated Markdown contents for the given Markdown.
      *
      * @param  string  $markdown
-     * @return VTalbot\Markdown\Markdown
+     * @return Markdown
      */
     public function make($markdown)
     {
@@ -106,7 +108,7 @@ class Environment {
      * Get the appropriate Markdown engine for the given path.
      *
      * @param  string  $path
-     * @return Illuminate\View\Engines\EngineInterface
+     * @return EngineInterface
      */
     protected function getEngineFromPath($path)
     {
@@ -126,9 +128,9 @@ class Environment {
         $extensions = array_keys($this->extensions);
 
         return array_first($extensions, function($key, $value) use ($path)
-        {
-            return ends_with($path, $value);
-        });
+            {
+                return ends_with($path, $value);
+            });
     }
 
     /**
@@ -219,7 +221,7 @@ class Environment {
     /**
      * Get the engine resolver instance.
      *
-     * @return Illuminate\View\Engines\EngineResolver
+     * @return EngineResolver
      */
     public function getEngineResolver()
     {
@@ -229,7 +231,7 @@ class Environment {
     /**
      * Get the Markdown finder instance.
      *
-     * @return Illuminate\View\FileViewFinder
+     * @return FileViewFinder
      */
     public function getFinder()
     {
@@ -239,7 +241,7 @@ class Environment {
     /**
      * Get the event dispatcher instance.
      *
-     * @return Illuminate\Events\Dispatcher
+     * @return Dispatcher
      */
     public function getDispatcher()
     {
@@ -249,7 +251,7 @@ class Environment {
     /**
      * Get the IoC container instance.
      *
-     * @return Illuminate\Container
+     * @return Container
      */
     public function getContainer()
     {
@@ -259,7 +261,7 @@ class Environment {
     /**
      * Set the IoC container instance.
      *
-     * @param  Illuminate\Container  $container
+     * @param  Container  $container
      * @return void
      */
     public function setContainer(Container $container)
