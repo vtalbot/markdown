@@ -79,7 +79,7 @@ class MarkdownServiceProvider extends ServiceProvider {
 
         $resolver->register('markdown', function() use ($app)
             {
-                $cache = app_storage().'/markdown';
+                $cache = storage_path().'/markdown';
 
                 if ( ! File::isDirectory($cache))
                 {
