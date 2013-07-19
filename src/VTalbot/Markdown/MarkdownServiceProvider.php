@@ -2,11 +2,11 @@
 
 namespace VTalbot\Markdown;
 
-use \Config;
-use \Markdown;
-use \Route;
-use \Response;
-use \File;
+use Config;
+use Markdown;
+use Route;
+use Response;
+use File;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Illuminate\View\Engines\EngineResolver;
@@ -79,7 +79,7 @@ class MarkdownServiceProvider extends ServiceProvider {
 
         $resolver->register('markdown', function() use ($app)
             {
-                $cache = app_storage().'/markdown';
+                $cache = storage_path().'/markdown';
 
                 if ( ! File::isDirectory($cache))
                 {
