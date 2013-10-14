@@ -10,7 +10,7 @@ Add to your composer.json those lines
 
 Run `php artisan config:publish vtalbot/markdown`
 
-Then edit `config.php` in `app/packages/vtalbot/markdown` to your needs.
+Then edit `config.php` in `app/config/packages/vtalbot/markdown` to your needs.
 
 Add `'VTalbot\Markdown\MarkdownServiceProvider',` to `providers` in `app/config/app.php`
 and `'Markdown' => 'VTalbot\Markdown\Facades\Markdown',` to `aliases` in `app/config/app.php`
