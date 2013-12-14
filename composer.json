@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "laravel/framework": ">=4.0",
-        "dflydev/markdown": "dev-master"
+        "laravel/framework": "4.x",
+        "dflydev/markdown": "v1.0.3"
     },
     "autoload": {
         "psr-0": {"VTalbot\\Markdown": "src/"}
