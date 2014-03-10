@@ -8,6 +8,8 @@ Add to your composer.json those lines
         "vtalbot/markdown": "1.*"
     }
 
+Run `composer update`
+
 Run `php artisan config:publish vtalbot/markdown`
 
 Then edit `config.php` in `app/config/packages/vtalbot/markdown` to your needs.
