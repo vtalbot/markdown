@@ -1,6 +1,6 @@
 {
     "name": "vtalbot/markdown",
-    "description": "Markdown compiler for Laravel 4 (Illuminate)",
+    "description": "Markdown compiler for Laravel 4",
     "keywords": ["laravel", "md", "markdown", "illuminate"],
     "license": "MIT",
     "authors": [
@@ -14,8 +14,7 @@
         "michelf/php-markdown": "1.4.x"
     },
     "require-dev": {
-        "mockery/mockery": "0.9.0",
-        "phpunit/phpunit": "4.0.17"
+        "mockery/mockery": "0.9.0"
     },
     "autoload": {
         "psr-0": {"VTalbot\\Markdown": "src/"}
