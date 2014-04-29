@@ -36,15 +36,18 @@ class MarkdownServiceProvider extends ServiceProvider {
      */
     public function registerRoutes()
     {
-        foreach (Config::get('markdown::routes') as $routes)
+        if (Config::get('markdown::add_routes'))
         {
-            foreach (Config::get('markdown::extensions') as $ext)
+            foreach (Config::get('markdown::routes') as $routes)
             {
-                Route::get($routes.'{file}.'.$ext, function($file) use ($routes)
-                    {
-                        $markdown = Markdown::make($routes.$file);
-                        return Response::make($markdown, 200, array('Content-Type' => 'text/html'));
-                    })->where('file', '.*');
+                foreach (Config::get('markdown::extensions') as $ext)
+                {
+                    Route::get($routes.'{file}.'.$ext, function($file) use ($routes)
+                        {
+                            $markdown = Markdown::make($routes.$file);
+                            return Response::make($markdown, 200, array('Content-Type' => 'text/html'));
+                        })->where('file', '.*');
+                }
             }
         }
     }
