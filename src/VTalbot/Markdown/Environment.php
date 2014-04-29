@@ -9,6 +9,7 @@ use Illuminate\View\Engines\EngineInterface;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\FileViewFinder;
 use Illuminate\View\ViewFinderInterface;
+use Illuminate\Routing\Route;
 
 class Environment {
 
@@ -62,6 +63,13 @@ class Environment {
     protected $renderCount = 0;
 
     /**
+     * Handle markdown file not found.
+     *
+     * @var Closure|string
+     */
+    protected $notFoundHandler;
+
+    /**
      * Create a new Markdown environment instance.
      *
      * @param EngineResolver      $engines
@@ -86,9 +94,36 @@ class Environment {
      */
     public function make($markdown)
     {
-        $path = $this->finder->find($markdown);
+        try
+        {
+            $path = $this->finder->find($markdown);
+            return new Markdown($this, $this->getEngineFromPath($path), $markdown, $path);
+        }
+        catch (\InvalidArgumentException $e)
+        {
+            if ( ! is_null($this->notFoundHandler))
+            {
+                if ($this->notFoundHandler instanceof Closure)
+                {
+                    return call_user_func($this->notFoundHandler, $markdown);
+                }
+                else
+                {
+                    $handler = explode('@', $this->notFoundHandler);
 
-        return new Markdown($this, $this->getEngineFromPath($path), $markdown, $path);
+                    if (class_exists($class = $handler[0]))
+                    {
+                        $controller = new $class;
+
+                        $action = isset($handler[1]) ? $handler[1] : 'index';
+
+                        return $controller->callAction($action, array($markdown));
+                    }
+                }
+            }
+
+            throw $e;
+        }
     }
 
     /**
@@ -277,6 +312,17 @@ class Environment {
     public function getShared()
     {
         return $this->shared;
+    }
+
+    /**
+     * Set the handler for markdown file not found.
+     *
+     * @param  Closure|string
+     * @return void
+     */
+    public function setNotFoundHandler($notFoundHandler)
+    {
+        $this->notFoundHandler = $notFoundHandler;
     }
 
 }
