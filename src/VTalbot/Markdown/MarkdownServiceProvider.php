@@ -88,6 +88,8 @@ class MarkdownServiceProvider extends ServiceProvider {
 
                 $compiler = new MarkdownCompiler($app['files'], $cache);
 
+                $compiler->setOptions(Config::get('markdown::options'));
+
                 return new CompilerEngine($compiler, $app['files']);
             });
     }
