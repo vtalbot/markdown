@@ -11,7 +11,7 @@
     ],
     "require": {
         "laravel/framework": "~4",
-        "michelf/php-markdown": "1.4.x"
+        "michelf/php-markdown": "1.5.x"
     },
     "require-dev": {
         "mockery/mockery": "0.9.0"
