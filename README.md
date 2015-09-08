@@ -1,15 +1,22 @@
-# Markdown Compiler for Laravel 4
+# Markdown Compiler for Laravel
 
 ### Installation
 
-Run `composer require vtalbot/markdown:1.5`
+#### For Laravel 4
 
-Run `php artisan config:publish vtalbot/markdown`
+1. Run `composer require vtalbot/markdown:1.5`
+2. Run `php artisan config:publish vtalbot/markdown`
+3. Then edit `config.php` in `app/config/packages/vtalbot/markdown` to your needs.
+4. Add `'VTalbot\Markdown\MarkdownServiceProvider',` to `providers` in `app/config/app.php` and
+`'Markdown' => 'VTalbot\Markdown\Facades\Markdown',` to `aliases` in `app/config/app.php`
 
-Then edit `config.php` in `app/config/packages/vtalbot/markdown` to your needs.
+#### For Laravel 5+
 
-Add `'VTalbot\Markdown\MarkdownServiceProvider',` to `providers` in `app/config/app.php`
-and `'Markdown' => 'VTalbot\Markdown\Facades\Markdown',` to `aliases` in `app/config/app.php`
+1. Run `composer require vtalbot/markdown 2.0` 
+2. Run `php artisan vendor:publish --provider=VTalbot\Markdown\MarkdownServiceProvider`
+3. Then edit `markdown.php` in your `config` directory to your needs.
+4. Add `VTalbot\Markdown\MarkdownServiceProvider::class` to `providers` in `config/app.php` and
+`'Markdown' => VTalbot\Markdown\Facades\Markdown::class` to `aliases` in `config/app.php`
 
 ### Usage
 
@@ -62,6 +69,9 @@ Markdown::setNotFoundHandler('MarkdownController@missing');
 For more information on the Markdown configuration, you may refer to http://michelf.ca/projects/php-markdown/configuration .
 
 ### Changelog
+
+#### 2.0
+- Add support for Laravel 5
 
 #### 1.5
 
