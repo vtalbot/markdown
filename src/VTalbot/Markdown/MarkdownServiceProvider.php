@@ -26,6 +26,8 @@ class MarkdownServiceProvider extends ServiceProvider {
             __DIR__.'/../../config/config.php' => config_path('markdown.php'),
         ]);
 
+        $this->mergeConfigFrom(__DIR__.'/../../config/config.php', 'markdown');
+
         $this->registerRoutes();
         $this->registerEngineResolver();
         $this->registerMarkdownFinder();
