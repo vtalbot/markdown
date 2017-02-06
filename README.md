@@ -12,7 +12,7 @@
 
 #### For Laravel 5+
 
-1. Run `composer require vtalbot/markdown:2.0` 
+1. Run `composer require vtalbot/markdown:2.0`
 2. Run `php artisan vendor:publish --provider=“VTalbot\Markdown\MarkdownServiceProvider”`
 3. Then edit `markdown.php` in your `config` directory to your needs.
 4. Add `VTalbot\Markdown\MarkdownServiceProvider::class` to `providers` in `config/app.php` and
