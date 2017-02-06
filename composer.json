@@ -1,6 +1,6 @@
 {
-    "name": "vtalbot/markdown",
-    "description": "Markdown compiler for Laravel 4",
+    "name": "nonoesp/markdown",
+    "description": "Markdown compiler for Laravel 5",
     "keywords": ["laravel", "md", "markdown", "illuminate"],
     "license": "MIT",
     "authors": [
