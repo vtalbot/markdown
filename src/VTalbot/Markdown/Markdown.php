@@ -1,6 +1,6 @@
 <?php
 
-namespace Vtalbot\Markdown;
+namespace VTalbot\Markdown;
 
 use Illuminate\View\Engines\EngineInterface;
 use Illuminate\Contracts\Support\Renderable as Renderable;
