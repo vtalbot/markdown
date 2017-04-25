@@ -160,12 +160,7 @@ class Environment {
      */
     protected function getExtension($path)
     {
-        $extensions = array_keys($this->extensions);
-
-        return array_first($extensions, function($key, $value) use ($path)
-            {
-                return ends_with($path, $value);
-            });
+        return \File::extension($path);
     }
 
     /**
