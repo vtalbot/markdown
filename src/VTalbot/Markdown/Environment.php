@@ -164,7 +164,7 @@ class Environment {
 
         return array_first($extensions, function($key, $value) use ($path)
             {
-                return ends_with($path, $value);
+                return ends_with($path, $key);
             });
     }
 
