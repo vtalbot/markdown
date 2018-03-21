@@ -3,21 +3,19 @@
     "description": "Markdown compiler for Laravel 5",
     "keywords": ["laravel", "md", "markdown", "illuminate"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Vincent Talbot",
-            "email": "vincent.talbot@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "Vincent Talbot",
+        "email": "vincent.talbot@gmail.com"
+    }],
     "require": {
         "laravel/framework": "~5.0",
-        "michelf/php-markdown": "1.5.x"
+        "michelf/php-markdown": "^1.8"
     },
     "require-dev": {
         "mockery/mockery": "0.9.0"
     },
     "autoload": {
-        "psr-4": {"VTalbot\\Markdown\\": "src/"}
+        "psr-4": { "VTalbot\\Markdown\\": "src/" }
     },
     "extra": {
         "branch-alias": {
