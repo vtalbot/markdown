@@ -2,6 +2,9 @@ dist: trusty
 
 language: php
 
+env:
+  - COMPOSER_MEMORY_LIMIT=-1
+
 php:
   - 5.4
   - 5.5
