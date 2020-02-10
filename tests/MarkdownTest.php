@@ -5,7 +5,7 @@ use VTalbot\Markdown\Compilers\MarkdownCompiler;
 
 class MarkdownTest extends PHPUnit\Framework\TestCase {
 
-    public function tearDown()
+    protected function tearDown()
     {
         m::close();
     }
