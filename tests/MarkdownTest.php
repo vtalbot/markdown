@@ -5,10 +5,11 @@ use VTalbot\Markdown\Compilers\MarkdownCompiler;
 
 class MarkdownTest extends PHPUnit\Framework\TestCase {
 
-    protected function tearDown()
-    {
-        m::close();
-    }
+    // Removed for BC.
+    // protected function tearDown()
+    // {
+    //     m::close();
+    // }
 
     public function testTransformString()
     {
