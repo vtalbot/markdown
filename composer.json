@@ -8,7 +8,7 @@
         "email": "vincent.talbot@gmail.com"
     }],
     "require": {
-        "laravel/framework": "~5.0",
+        "laravel/framework": "^5.0",
         "michelf/php-markdown": "^1.8"
     },
     "require-dev": {
