@@ -3,12 +3,13 @@
 use Mockery as m;
 use VTalbot\Markdown\Compilers\MarkdownCompiler;
 
-class MarkdownTest extends PHPUnit_Framework_TestCase {
+class MarkdownTest extends PHPUnit\Framework\TestCase {
 
-    public function tearDown()
-    {
-        m::close();
-    }
+    // Removed for BC.
+    // protected function tearDown()
+    // {
+    //     m::close();
+    // }
 
     public function testTransformString()
     {

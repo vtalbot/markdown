@@ -50,6 +50,17 @@ class MarkdownCompiler extends Compiler implements CompilerInterface {
     }
 
     /**
+     * Helper to match CommonMark func name
+     *
+     * @param  string  $str
+     * @return string
+     */
+    public function convertToHtml($str)
+    {
+        return $this->string($str);
+    }
+
+    /**
      * Create a new parser with the options.
      *
      * @return MarkdownExtra|Markdown

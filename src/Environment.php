@@ -140,6 +140,17 @@ class Environment {
     }
 
     /**
+     * Helper to match CommonMark func name.
+     *
+     * @param  string  $markdown
+     * @return string
+     */
+    public function convertToHtml($markdown)
+    {
+        return $this->string($markdown);
+    }
+
+    /**
      * Get the appropriate Markdown engine for the given path.
      *
      * @param  string  $path
